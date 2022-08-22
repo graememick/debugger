@@ -34,16 +34,35 @@ public class PlayerController : MonoBehaviour
         //if movement is not zero, move
         if (_movementInput != Vector2.zero)
         {
-            int count= _rigidBody.Cast(
-                _movementInput,
-                movementFilter,
-                castCollisions,
-                moveSpeed*Time.fixedDeltaTime+collisionOffset
-            );
-            if (count == 0)
-            {
-                _rigidBody.MovePosition(_rigidBody.position + _movementInput * moveSpeed * Time.fixedDeltaTime);
-            }
+           bool couldMove = tryMove(_movementInput);
+
+           if (!couldMove)
+           {
+               couldMove = tryMove(new Vector2(_movementInput.x, 0));
+               if (!couldMove)
+               {
+                   couldMove = tryMove(new Vector2(0, _movementInput.y));
+               }
+           }
+        }
+    }
+
+    private bool tryMove(Vector2 direction)
+    {
+        int count= _rigidBody.Cast(
+            direction,
+            movementFilter,
+            castCollisions,
+            moveSpeed*Time.fixedDeltaTime+collisionOffset
+        );
+        if (count == 0)
+        {
+            _rigidBody.MovePosition(_rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
