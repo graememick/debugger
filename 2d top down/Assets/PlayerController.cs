@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     
     Vector2 _movementInput;
     private Rigidbody2D _rigidBody;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     // Start is called before the first frame updateß
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
 
         _rigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -36,14 +40,27 @@ public class PlayerController : MonoBehaviour
         {
            bool couldMove = tryMove(_movementInput);
 
-           if (!couldMove)
+           if (!couldMove && _movementInput.x > 0)
            {
                couldMove = tryMove(new Vector2(_movementInput.x, 0));
-               if (!couldMove)
-               {
-                   couldMove = tryMove(new Vector2(0, _movementInput.y));
-               }
            }
+           if (!couldMove && _movementInput.y > 0)
+           {
+               couldMove = tryMove(new Vector2(0, _movementInput.y));
+           }
+           _animator.SetBool("isMoving", couldMove);
+        }
+        else
+        {
+            _animator.SetBool("isMoving", false);
+        }
+        //set direction of sprite to movement direction
+        if (_movementInput.x > 0)
+        {
+            _spriteRenderer.flipX = false;
+        } else if (_movementInput.x < 0)
+        {
+            _spriteRenderer.flipX = true;
         }
     }
 
