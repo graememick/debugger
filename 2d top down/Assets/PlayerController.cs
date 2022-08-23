@@ -108,6 +108,12 @@ public class PlayerController : MonoBehaviour
     {
         LockMove();    
     }
+
+    public void EndSwordAttack()
+    {
+        UnlockMove();
+        swordAttack.stopAttack();
+    }
     
     void LockMove()
     {
