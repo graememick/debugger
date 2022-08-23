@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public ContactFilter2D movementFilter;
+    public SwordAttack swordAttack;
     public float collisionOffset = 0.05f; 
     
     Vector2 _movementInput;
@@ -103,9 +104,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SwordAttack()
+    {
+        LockMove();    
+    }
+    
     void LockMove()
     {
         canMove = false;
+        if (_spriteRenderer.flipX == true)
+        {
+            swordAttack.attackLeft();
+        }
+        else
+        {
+            swordAttack.attackRight();
+
+        }
     }
 
     void UnlockMove()
