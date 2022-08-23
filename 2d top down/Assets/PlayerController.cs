@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    private bool canMove = true;
+
     // Start is called before the first frame updateß
     void Start()
     {
@@ -35,32 +37,39 @@ public class PlayerController : MonoBehaviour
     //Update 100 x per second
     private void FixedUpdate()
     {
-        //if movement is not zero, move
-        if (_movementInput != Vector2.zero)
+        if (canMove)
         {
-           bool couldMove = tryMove(_movementInput);
+            //if movement is not zero, move
+            if (_movementInput != Vector2.zero)
+            {
+                bool couldMove = tryMove(_movementInput);
 
-           if (!couldMove && _movementInput.x > 0)
-           {
-               couldMove = tryMove(new Vector2(_movementInput.x, 0));
-           }
-           if (!couldMove && _movementInput.y > 0)
-           {
-               couldMove = tryMove(new Vector2(0, _movementInput.y));
-           }
-           _animator.SetBool("isMoving", couldMove);
-        }
-        else
-        {
-            _animator.SetBool("isMoving", false);
-        }
-        //set direction of sprite to movement direction
-        if (_movementInput.x > 0)
-        {
-            _spriteRenderer.flipX = false;
-        } else if (_movementInput.x < 0)
-        {
-            _spriteRenderer.flipX = true;
+                if (!couldMove && _movementInput.x > 0)
+                {
+                    couldMove = tryMove(new Vector2(_movementInput.x, 0));
+                }
+
+                if (!couldMove && _movementInput.y > 0)
+                {
+                    couldMove = tryMove(new Vector2(0, _movementInput.y));
+                }
+
+                _animator.SetBool("isMoving", couldMove);
+            }
+            else
+            {
+                _animator.SetBool("isMoving", false);
+            }
+
+            //set direction of sprite to movement direction
+            if (_movementInput.x > 0)
+            {
+                _spriteRenderer.flipX = false;
+            }
+            else if (_movementInput.x < 0)
+            {
+                _spriteRenderer.flipX = true;
+            }
         }
     }
 
@@ -86,5 +95,21 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue)
     {
         _movementInput = movementValue.Get<Vector2>();
+    }
+
+    void OnFire()
+    {
+    _animator.SetTrigger("swordAttack");
+
+    }
+
+    void LockMove()
+    {
+        canMove = false;
+    }
+
+    void UnlockMove()
+    {
+        canMove = true;
     }
 }
