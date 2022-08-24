@@ -8,7 +8,7 @@ public class SwordAttack : MonoBehaviour
 {
 
    public float damage = 3;
-   public Collider2D _swordCollider;
+   public Collider2D swordCollider;
    private Vector2 _rightAttackOffset;
 
    private void Start()
@@ -20,28 +20,32 @@ public class SwordAttack : MonoBehaviour
    {
       print("attack right");
 
-      _swordCollider.enabled = true;
+      swordCollider.enabled = true;
       transform.localPosition = _rightAttackOffset;
    }
 
    public void attackLeft()
    {
       print("attack left");
-      _swordCollider.enabled = true;
+      swordCollider.enabled = true;
       transform.localPosition = new Vector3(_rightAttackOffset.x * -1, _rightAttackOffset.y);
    }
 
    public void stopAttack()
    {
-      _swordCollider.enabled = false;
+      swordCollider.enabled = false;
    }
 
    private void OnTriggerEnter2D(Collider2D other)
    {
+      print("enter");
       if (other.tag == "Enemy")
       {
          Enemy enemy = other.GetComponent<Enemy>();
-         enemy.health -= damage;
+         if (enemy != null)
+         {
+            enemy.Health -= damage;
+         }
          //deal damage to enemy;
       }
    }

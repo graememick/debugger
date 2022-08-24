@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public SwordAttack swordAttack;
     public float collisionOffset = 0.05f; 
     
-    Vector2 _movementInput;
+    private Vector2 _movementInput;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
@@ -28,13 +28,6 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //Update 100 x per second
     private void FixedUpdate()
     {
@@ -45,12 +38,12 @@ public class PlayerController : MonoBehaviour
             {
                 bool couldMove = tryMove(_movementInput);
 
-                if (!couldMove && _movementInput.x > 0)
+                if (!couldMove)
                 {
                     couldMove = tryMove(new Vector2(_movementInput.x, 0));
                 }
 
-                if (!couldMove && _movementInput.y > 0)
+                if (!couldMove)
                 {
                     couldMove = tryMove(new Vector2(0, _movementInput.y));
                 }
@@ -76,21 +69,33 @@ public class PlayerController : MonoBehaviour
 
     private bool tryMove(Vector2 direction)
     {
-        int count= _rigidBody.Cast(
-            direction,
-            movementFilter,
-            castCollisions,
-            moveSpeed*Time.fixedDeltaTime+collisionOffset
-        );
-        if (count == 0)
+        if (direction != Vector2.zero)
         {
-            _rigidBody.MovePosition(_rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
-            return true;
+
+            {
+                int count = _rigidBody.Cast(
+                    direction,
+                    movementFilter,
+                    castCollisions,
+                    moveSpeed * Time.fixedDeltaTime + collisionOffset
+                );
+                if (count == 0)
+                {
+                    _rigidBody.MovePosition(_rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            
         }
         else
         {
             return false;
         }
+        
     }
 
     void OnMove(InputValue movementValue)
@@ -107,6 +112,15 @@ public class PlayerController : MonoBehaviour
     public void SwordAttack()
     {
         LockMove();    
+        if (_spriteRenderer.flipX == true)
+        {
+            swordAttack.attackLeft();
+        }
+        else
+        {
+            swordAttack.attackRight();
+
+        }
     }
 
     public void EndSwordAttack()
@@ -118,15 +132,7 @@ public class PlayerController : MonoBehaviour
     void LockMove()
     {
         canMove = false;
-        if (_spriteRenderer.flipX == true)
-        {
-            swordAttack.attackLeft();
-        }
-        else
-        {
-            swordAttack.attackRight();
-
-        }
+        
     }
 
     void UnlockMove()

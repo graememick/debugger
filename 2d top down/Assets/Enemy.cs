@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private Animator _animator;
     public float Health
     {
         set
         {
+            print("health value:" + value);
             health = value;
             if (health <= 0)
             {
@@ -22,20 +25,19 @@ public class Enemy : MonoBehaviour
 
     public float health = 1;
 
-    public void Defeated()
+    private void Start()
     {
-        Destroy(gameObject);
+        _animator = GetComponent<Animator>();
     }
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Defeated()
     {
+    _animator.SetTrigger("Defeated");
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveEnemy()
     {
-        
+        Destroy(gameObject);
     }
 }
