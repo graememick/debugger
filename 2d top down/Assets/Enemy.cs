@@ -10,12 +10,21 @@ public class Enemy : MonoBehaviour
     {
         set
         {
-            print("health value:" + value);
-            health = value;
-            if (health <= 0)
+            print(" value:" + value);
+            print("health :" + value);
+            
+            if (value < health && value > 0)
+            {
+                Hit();
+            } else if (health <= 0)
             {
                 Defeated();
             }
+
+            health = value;
+           
+
+            
         }
         get
         {
@@ -23,7 +32,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float health = 1;
+    public float health = 3;
 
     private void Start()
     {
@@ -34,6 +43,12 @@ public class Enemy : MonoBehaviour
     {
     _animator.SetTrigger("Defeated");
         
+    }
+
+    private void Hit()
+    {
+        _animator.SetTrigger("Hit");
+
     }
 
     public void RemoveEnemy()

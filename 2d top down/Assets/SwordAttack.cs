@@ -7,7 +7,7 @@ using UnityEngine;
 public class SwordAttack : MonoBehaviour
 {
 
-   public float damage = 3;
+   public float damage = 1;
    public Collider2D swordCollider;
    private Vector2 _rightAttackOffset;
 
