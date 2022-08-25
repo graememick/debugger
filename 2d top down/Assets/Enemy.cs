@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     private Animator _animator;
     private Rigidbody2D _rigidbody;
+
+    public float damage = 1;
     public float Health
 
     {
@@ -94,5 +96,11 @@ public class Enemy : MonoBehaviour, IDamageable
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("collided");
+        IDamageable damageable = col.collider.GetComponent<IDamageable>();
+
+        if (damageable != null)
+        {
+            damageable.OnHit(damage);
+        }
     }
 }
