@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
+
+using Interfaces;
 using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
 
    public float damage = 1;
+   public float blowbackForce = 10000f;
    public Collider2D swordCollider;
    private Vector2 _rightAttackOffset;
 
@@ -36,17 +35,25 @@ public class SwordAttack : MonoBehaviour
       swordCollider.enabled = false;
    }
 
-   private void OnTriggerEnter2D(Collider2D other)
+   private void OnTriggerEnter2D(Collider2D collider)
    {
-      print("enter");
-      if (other.tag == "Enemy")
+
+      IDamageable damageableObject = collider.GetComponent<IDamageable>();
+
+      if (damageableObject != null)
       {
-         Enemy enemy = other.GetComponent<Enemy>();
-         if (enemy != null)
-         {
-            enemy.Health -= damage;
-         }
-         //deal damage to enemy;
+         Vector3 parentPosition = transform.parent.position;
+         Vector2 direction = (collider.gameObject.transform.position - parentPosition).normalized;
+         Vector2 knockback = direction * blowbackForce;
+         
+         //collider.SendMessage("onHit", damage, knockback);
+         damageableObject.OnHit(damage, knockback);
+
       }
+      else
+      {
+         Debug.LogWarning("Collider does not implement IDamagable");
+      }
+      
    }
 }
