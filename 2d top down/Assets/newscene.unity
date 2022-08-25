@@ -8924,16 +8924,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 903650333, guid: 0ed529314c0d3439d9ff888e37d81035, type: 3}
-      propertyPath: health
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 903650334, guid: 0ed529314c0d3439d9ff888e37d81035, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 903650335, guid: 0ed529314c0d3439d9ff888e37d81035, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
+      propertyPath: moveSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 930356388613531388, guid: 0ed529314c0d3439d9ff888e37d81035, type: 3}
       propertyPath: m_Name
@@ -9210,7 +9202,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7789373, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9242,6 +9234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1432579676}
     m_Modifications:
+    - target: {fileID: 700855682836436687, guid: fa0aaff01b92942c1959578d6c121a3f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2680418800304146572, guid: fa0aaff01b92942c1959578d6c121a3f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9302,6 +9298,14 @@ PrefabInstance:
     - target: {fileID: 4094903073189085832, guid: b08f028ccb78041fb81eeda771b3fe60, type: 3}
       propertyPath: m_Name
       value: animated_control_room_facebook_scrolling_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094903073189085832, guid: b08f028ccb78041fb81eeda771b3fe60, type: 3}
+      propertyPath: m_TagString
+      value: ComputerMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094903073189085834, guid: b08f028ccb78041fb81eeda771b3fe60, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4094903073189085835, guid: b08f028ccb78041fb81eeda771b3fe60, type: 3}
       propertyPath: m_RootOrder

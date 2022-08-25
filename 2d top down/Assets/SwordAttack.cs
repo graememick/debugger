@@ -6,7 +6,7 @@ public class SwordAttack : MonoBehaviour
 {
 
    public float damage = 1;
-   public float blowbackForce = 10000f;
+   public float blowbackForce = 1f;
    public Collider2D swordCollider;
    private Vector2 _rightAttackOffset;
 
@@ -42,8 +42,9 @@ public class SwordAttack : MonoBehaviour
 
       if (damageableObject != null)
       {
-         Vector3 parentPosition = transform.parent.position;
-         Vector2 direction = (collider.gameObject.transform.position - parentPosition).normalized;
+         Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+
+         Vector2 direction = (Vector2)(collider.gameObject.transform.position - parentPosition).normalized;
          Vector2 knockback = direction * blowbackForce;
          
          //collider.SendMessage("onHit", damage, knockback);

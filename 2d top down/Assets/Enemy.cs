@@ -2,105 +2,45 @@ using System;
 using Interfaces;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour
 {
-    private Animator _animator;
-    private Rigidbody2D _rigidbody;
 
     public float damage = 1;
-    public float Health
-
-    {
-        set
-        {
-            health = value;
-
-            print(" value:" + value);
-            print("health :" + value);
-            
-            if (health <= 0)
-            {
-                _targetable = false;
-
-                Defeated();
-            }
-
-           
-
-            
-        }
-        get
-        {
-            return health;
-        }
-    }
-
-    public bool _targetable;
-
-    public bool Targetable
-    {
-        set
-        {
-            _targetable = value;
-            //_rigidbody.simulated = value;
-        }
-        get
-        {
-            return _targetable;
-        }
-    }
-    public void OnHit(float damage)
-    {
-        Health -= damage;
-        if (health > 0)
-        {
-            Hit();
-        } 
-    }
-
-    public void OnHit(float damage, Vector2 knockback)
-    {
-        Health -= damage;
-        _rigidbody.AddForce(knockback, ForceMode2D.Impulse);
-        if (health > 0)
-        {
-            Hit();
-        } 
-    }
-
-    public float health = 3;
+    public float blowbackForce = 1f;
+    public DetectionZone detectionZone;
+    public float moveSpeed = 50f;
+    private Rigidbody2D rb;
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Defeated()
+    private void FixedUpdate()
     {
-    _animator.SetTrigger("Defeated");
         
-    }
-
-    private void Hit()
-    {
-        _animator.SetTrigger("Hit");
-
-    }
-
-    public void RemoveEnemy()
-    {
-        Destroy(gameObject);
+        if (detectionZone.detectedObjs.Count > 0)
+        {
+            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
+            
+            rb.AddForce(direction * moveSpeed * Time.deltaTime);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("collided");
+        Collider2D collider = col.collider;
         IDamageable damageable = col.collider.GetComponent<IDamageable>();
 
         if (damageable != null)
         {
-            damageable.OnHit(damage);
+            //Vector3 parentPosition = transform.parent.position;
+            Vector2 direction = (collider.gameObject.transform.position - transform.position).normalized;
+            Vector2 knockback = direction * blowbackForce;
+         
+            //collider.SendMessage("onHit", damage, knockback);
+            damageable.OnHit(damage, knockback);
         }
     }
 }
