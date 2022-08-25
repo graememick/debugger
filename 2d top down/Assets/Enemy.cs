@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using Interfaces;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour
     public DetectionZone detectionZone;
     public float moveSpeed = 50f;
     private Rigidbody2D rb;
+    public Collider2D targetToDestroy;
 
     private void Start()
     {
@@ -22,6 +24,12 @@ public class Enemy : MonoBehaviour
         if (detectionZone.detectedObjs.Count > 0)
         {
             Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
+            
+            rb.AddForce(direction * moveSpeed * Time.deltaTime);
+        }
+        else if (detectionZone.detectedObjs.Count == 0)
+        {
+            Vector2 direction = (targetToDestroy.gameObject.transform.position - transform.position).normalized;
             
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
         }
@@ -42,5 +50,6 @@ public class Enemy : MonoBehaviour
             //collider.SendMessage("onHit", damage, knockback);
             damageable.OnHit(damage, knockback);
         }
+        
     }
 }
