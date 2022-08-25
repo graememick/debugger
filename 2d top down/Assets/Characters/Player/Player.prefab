@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8516015175669809038}
   - component: {fileID: 189163198119594059}
   - component: {fileID: 4812821800382501559}
+  - component: {fileID: 1272210962}
+  - component: {fileID: 1272210961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -100,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: dbc8ca63077aa46b5a5974bbf28604f3, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -115,7 +117,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &189163198119594059
@@ -140,13 +142,13 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 1
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 1990015125210972083}
-  collisionOffset: 0.05
+  collisionOffset: 0.02
 --- !u!95 &4812821800382501559
 Animator:
   serializedVersion: 4
@@ -167,6 +169,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1272210962
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105335116155248320}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &1272210961
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105335116155248320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.002757132, y: 0.0018296689}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.15}
+    oldSize: {x: 0.15, y: 0.21}
+    newSize: {x: 0.48, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.077453986, y: 0.02422911}
+  m_EdgeRadius: 0
 --- !u!1 &5129959098315900168
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,5 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019c715e8e1194b5cb01b126cf04d6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
-  swordCollider: {fileID: 0}
+  damage: 1
+  blowbackForce: 1
+  swordCollider: {fileID: 7373110768266264809}

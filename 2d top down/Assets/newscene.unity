@@ -608,11 +608,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.48}
   m_EdgeRadius: 0
---- !u!61 &911344609 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7373110768266264809, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-  m_PrefabInstance: {fileID: 4532643089198619911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114879045
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,58 +789,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9092439120411553918, guid: 48ffb3e9ef0374c46b1d577c86fa3579, type: 3}
   m_PrefabInstance: {fileID: 8860282940741535948}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1272210960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1105335116155248320, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-  m_PrefabInstance: {fileID: 4532643089198619911}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1272210961
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272210960}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.002757134, y: -0.16451085}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.15}
-    oldSize: {x: 0.15, y: 0.21}
-    newSize: {x: 0.48, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.077453986, y: 0.014958203}
-  m_EdgeRadius: 0
---- !u!50 &1272210962
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272210960}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!4 &1272210966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7663638637149614704, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
@@ -12157,26 +12100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 189163198119594059, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: collisionOffset
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 189163198119594059, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: movementFilter.layerMask.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1105335116155248320, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1990015125210972083, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1990015125210972083, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: swordCollider
-      value: 
-      objectReference: {fileID: 911344609}
     - target: {fileID: 7663638637149614704, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -12220,14 +12147,6 @@ PrefabInstance:
     - target: {fileID: 7663638637149614704, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8516015175669809038, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: dbc8ca63077aa46b5a5974bbf28604f3, type: 3}
-    - target: {fileID: 8516015175669809038, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acc30d42a84c4f5384c95fd45aa59f4, type: 3}
