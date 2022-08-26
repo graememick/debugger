@@ -6,6 +6,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     public HealthBar healthBar;
+    public GameObject gameOverScreen;
     public float Health
     {
         set
@@ -69,11 +70,17 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         healthBar.SetMaxHealth(health);
+
     }
 
     private void Defeated()
     {
         _animator.SetTrigger("Defeated");
+        
+        if (gameObject.tag == "ComputerMain")
+        {
+            gameOverScreen.SetActive(true);
+        }
         
     }
 
@@ -86,5 +93,14 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public void RemoveEnemy()
     {
         Destroy(gameObject);
+        gameOverScreen.SetActive(true);
+
+        if (gameObject.tag == "Player")
+        {
+            print("player dead");
+            gameOverScreen.SetActive(true);
+            
+        }
+        
     }
 }
