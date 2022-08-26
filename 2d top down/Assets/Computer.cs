@@ -3,13 +3,11 @@ using Cinemachine;
 using Interfaces;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Computer : MonoBehaviour
 {
 
-    public float damage = 1;
+    public float damage = 0;
     public float blowbackForce = 1f;
-    public DetectionZone detectionZone;
-    public float moveSpeed = 500f;
     private Rigidbody2D rb;
     public Collider2D targetToDestroy;
 
@@ -17,26 +15,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    private void FixedUpdate()
-    {
-        
-        if (detectionZone.detectedObjs.Count > 0)
-        {
-            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
-            
-            rb.AddForce(direction * moveSpeed * Time.deltaTime);
-
-        }
-        else if (detectionZone.detectedObjs.Count == 0)
-        {
-            Vector2 direction = (targetToDestroy.gameObject.transform.position - transform.position).normalized;
-            
-            rb.AddForce(direction * moveSpeed * Time.deltaTime);
-            
-        }
-    }
-
+    
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("collided");
@@ -55,3 +34,4 @@ public class Enemy : MonoBehaviour
         
     }
 }
+
