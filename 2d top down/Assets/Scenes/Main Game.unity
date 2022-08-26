@@ -8133,8 +8133,8 @@ Tilemap:
   - first: {x: -8, y: -9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 219
+      m_TileSpriteIndex: 210
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8143,8 +8143,8 @@ Tilemap:
   - first: {x: -1, y: -9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 221
+      m_TileSpriteIndex: 212
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8203,8 +8203,8 @@ Tilemap:
   - first: {x: -8, y: -8, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 19
-      m_TileSpriteIndex: 19
+      m_TileIndex: 218
+      m_TileSpriteIndex: 209
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8213,8 +8213,8 @@ Tilemap:
   - first: {x: -1, y: -8, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 224
-      m_TileSpriteIndex: 220
+      m_TileIndex: 220
+      m_TileSpriteIndex: 211
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8343,8 +8343,8 @@ Tilemap:
   - first: {x: -1, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 221
+      m_TileSpriteIndex: 212
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8453,8 +8453,8 @@ Tilemap:
   - first: {x: -1, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 224
-      m_TileSpriteIndex: 220
+      m_TileIndex: 220
+      m_TileSpriteIndex: 211
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9116,11 +9116,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a50a36566c5a1488793a3024dd439407, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 7
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 40348130d740d4b0eaa7c8cdb9ed72be, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: bb0b15a97868b462495a3fc38cf722ed, type: 2}
-  - m_RefCount: 27
+  - m_RefCount: 26
     m_Data: {fileID: 11400000, guid: d745ed96c7e9248af9bd03242960f08e, type: 2}
   - m_RefCount: 23
     m_Data: {fileID: 11400000, guid: 8b7a35c0fae6f4d71b5f11b3f9155e3d, type: 2}
@@ -9518,19 +9518,19 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8e390ee04fd2a4889a5c1d1318564e6a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 943757fba7dd44842be35aa4616affc5, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: b267dd2ef8c454f2aa88e47580628cfe, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: cadced4a40b9b4a70965bc5bf0149310, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: f968223dcb2b04314b8cb75d1c5b82c2, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 98935b3bc8d29410aa51bcb5db2da084, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d947a05ecdf6b4b32a007038d8e46539, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 2339f6bd76bf44793bdb80375f3253bd, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8abe844bc81b5431bb3708460a758f99, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 891580bf83fcd4d5b8ed8bf5d37dbfca, type: 2}
@@ -9589,11 +9589,11 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 7
+  - m_RefCount: 4
     m_Data: {fileID: 127614086, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 27
+  - m_RefCount: 26
     m_Data: {fileID: 77158680, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: 583529896, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
@@ -9973,13 +9973,13 @@ Tilemap:
     m_Data: {fileID: 132262035, guid: 96aaccf17610a4f728058634ee064365, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -327887785, guid: 96aaccf17610a4f728058634ee064365, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: -366741299, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data: {fileID: 2041890724, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 4
     m_Data: {fileID: 1591412920, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 4
     m_Data: {fileID: 910726561, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1926026626, guid: 96aaccf17610a4f728058634ee064365, type: 3}
@@ -9995,7 +9995,7 @@ Tilemap:
     m_Data: {fileID: -24426711, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1830919457, guid: e3b41ccaf34ae458c8b1f862476d69c5, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 1
     m_Data: {fileID: -1848462662, guid: 8168ae5e3ab8d47e3bd9c706d1adc0b5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1058473298, guid: e3b41ccaf34ae458c8b1f862476d69c5, type: 3}
@@ -10989,6 +10989,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1432579676}
     m_Modifications:
+    - target: {fileID: 910388761325985528, guid: 48ffb3e9ef0374c46b1d577c86fa3579, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4760552374328068356, guid: 48ffb3e9ef0374c46b1d577c86fa3579, type: 3}
       propertyPath: m_Name
       value: _control_room_server_0
@@ -11678,6 +11682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1432579676}
     m_Modifications:
+    - target: {fileID: 910388761325985528, guid: 48ffb3e9ef0374c46b1d577c86fa3579, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4760552374328068356, guid: 48ffb3e9ef0374c46b1d577c86fa3579, type: 3}
       propertyPath: m_Name
       value: animated_control_room_server_0

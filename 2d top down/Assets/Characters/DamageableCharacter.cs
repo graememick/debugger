@@ -77,13 +77,17 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     private void Defeated()
     {
         _animator.SetTrigger("Defeated");
-        enemySpawner.SpawnNewSlime();
 
         if (gameObject.tag == "ComputerMain")
         {
             gameOverScreen.SetActive(true);
         }
-        
+        else
+        {
+            enemySpawner.SpawnNewSlime();
+
+        }
+
     }
 
     private void Hit()
