@@ -5,8 +5,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     private Animator _animator;
     private Rigidbody2D _rigidbody;
+    public HealthBar healthBar;
     public float Health
-
     {
         set
         {
@@ -58,6 +58,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if (health > 0)
         {
             Hit();
+            healthBar.SetHealth(health);
         } 
     }
 
@@ -67,6 +68,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        healthBar.SetMaxHealth(health);
     }
 
     private void Defeated()
