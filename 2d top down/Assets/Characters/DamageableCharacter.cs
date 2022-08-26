@@ -7,6 +7,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     private Rigidbody2D _rigidbody;
     public HealthBar healthBar;
     public GameObject gameOverScreen;
+    public EnemySpawner enemySpawner;
     public float Health
     {
         set
@@ -76,7 +77,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     private void Defeated()
     {
         _animator.SetTrigger("Defeated");
-        
+        enemySpawner.SpawnNewSlime();
+
         if (gameObject.tag == "ComputerMain")
         {
             gameOverScreen.SetActive(true);

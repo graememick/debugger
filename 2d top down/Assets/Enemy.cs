@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
 
         }
-        else if (detectionZone.detectedObjs.Count == 0)
+        else
         {
             Vector2 direction = (targetToDestroy.gameObject.transform.position - transform.position).normalized;
             
@@ -50,7 +50,15 @@ public class Enemy : MonoBehaviour
             Vector2 knockback = direction * blowbackForce;
          
             //collider.SendMessage("onHit", damage, knockback);
-            damageable.OnHit(damage, knockback);
+            if (col.collider.CompareTag("Enemy"))
+            {
+                damageable.OnHit(0, knockback);
+
+            }
+            else
+            {
+                damageable.OnHit(damage, knockback);
+            }
         }
         
     }
