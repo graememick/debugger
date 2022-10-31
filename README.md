@@ -33,7 +33,9 @@
 #Debugger
 Debugger is a top-down 2d tower defense game. The object of the game is defend your tower PC from the endless flow of invading bugs and to see how log you can last.
 
+<img width="1048" alt="Screen Shot 2022-10-31 at 17 04 04" src="https://user-images.githubusercontent.com/96172124/198960782-fe40df5e-276b-45d3-a915-7d7b8368ff74.png">
 
+<img width="907" alt="Screen Shot 2022-10-31 at 17 04 21" src="https://user-images.githubusercontent.com/96172124/198960796-d2b3398d-13f4-44ba-8389-db386329e0e1.png">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,7 +111,7 @@ Distributed under the MIT License.
 
 Graeme - [https://www.linkedin.com/in/graememick/](https://www.linkedin.com/in/graememick/)
 
-Project Link: [https://github.com/graememick/shun/](https://github.com/graememick/shun/)
+Project Link: [https://github.com/graememick/debugger/](https://github.com/graememick/debugger/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
